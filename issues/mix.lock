@@ -1,3 +1,4 @@
-%{"httpotion": {:git, "https://github.com/pragdave/httpotion.git", "3939fc28c7c5cbeaeeb8bb775d0a26c222468d7f", []},
+%{"ex_doc": {:git, "git://github.com/elixir-lang/ex_doc.git", "fc0f00d2ff3c5e20eaee519b937f6feb998aa0d0", []},
+  "httpotion": {:git, "git://github.com/pragdave/httpotion.git", "3939fc28c7c5cbeaeeb8bb775d0a26c222468d7f", []},
   "ibrowse": {:git, "git://github.com/cmullaparthi/ibrowse.git", "5bae7308a749f2dc801347c27f56dc1a21996aea", []},
-  "jsx": {:git, "https://github.com/talentdeficit/jsx.git", "4fba4f6c1cfeec5b16dbc216cbd79d8ac4729a46", []}}
+  "jsx": {:git, "git://github.com/talentdeficit/jsx.git", "4fba4f6c1cfeec5b16dbc216cbd79d8ac4729a46", []}}

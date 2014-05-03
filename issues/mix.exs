@@ -3,6 +3,8 @@ defmodule Issues.Mixfile do
 
   def project do
     [app: :issues,
+     name: "Elixir Issues",
+     source_url: "https://github.com/masteinhauser/programming-elixir/tree/master/issues",
      version: "0.0.1",
      elixir: "~> 0.13.0",
      escript_main_module: Issues.CLI,
@@ -26,8 +28,9 @@ defmodule Issues.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      { :httpotion, git: "https://github.com/pragdave/httpotion.git" },
-      { :jsx,       git: "https://github.com/talentdeficit/jsx.git" }
+      { :httpotion, github: "pragdave/httpotion" },
+      { :jsx,       github: "talentdeficit/jsx"  },
+      { :ex_doc,    github: "elixir-lang/ex_doc" }
     ]
   end
 end
