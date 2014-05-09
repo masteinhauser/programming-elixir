@@ -13,7 +13,9 @@ defmodule Sequence.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [ applications: [],
-      mod: {Sequence, []} ]
+      mod: {Sequence, 456},
+      registered: [ :Sequence ]
+    ]
   end
 
   # List all dependencies in the format:

@@ -3,7 +3,7 @@ defmodule Sequence do
 
   # See http://elixir-lang.org/docs/stable/Application.Behaviour.html
   # for more information on OTP Applications
-  def start(_type, _args) do
-    Sequence.Supervisor.start_link 100
+  def start(_type, initial_number) do
+    Sequence.Supervisor.start_link initial_number
   end
 end
