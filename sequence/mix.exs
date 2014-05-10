@@ -13,8 +13,8 @@ defmodule Sequence.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [ applications: [],
-      mod: {Sequence, 456},
-      registered: [ :Sequence ]
+      mod: {Sequence, {456, 1}},
+      registered: [ :sequence ]
     ]
   end
 

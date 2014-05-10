@@ -1,18 +1,18 @@
 defmodule Sequence.Supervisor do
   use Supervisor.Behaviour
 
-  def start_link(initial_number) do
-    result = {:ok, sup} = :supervisor.start_link(__MODULE__, [initial_number])
-    start_workers(sup, initial_number)
+  def start_link({initial_number, initial_delta}) do
+    result = {:ok, sup} = :supervisor.start_link(__MODULE__, [{initial_number, initial_delta}])
+    start_workers(sup, {initial_number, initial_delta})
     result
   end
 
-  def start_workers(sup, initial_number) do
+  def start_workers(sup, {initial_number, initial_delta}) do
     # Start the stash worker
-    {:ok, stash} = :supervisor.start_child(sup, worker(Sequence.Stash, [initial_number]))
+    {:ok, stash_pid} = :supervisor.start_child(sup, worker(Sequence.Stash, [{initial_number, initial_delta}]))
 
     # and then the supervisor for the actual sequence server
-    :supervisor.start_child(sup, supervisor(Sequence.SubSupervisor, [stash]))
+    :supervisor.start_child(sup, supervisor(Sequence.SubSupervisor, [stash_pid]))
   end
 
   def init(_) do
